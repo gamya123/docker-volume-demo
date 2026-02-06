@@ -1,12 +1,8 @@
 # Docker Volume Demo 
 # Objective
 
-Demonstrate Docker volume creation, container deletion, and volume reuse
-
-using Windows Command Prompt.
-
-# Project Overview
-
+Demonstrate Docker volume creation, container deletion, and volume reuse using Windows Command Prompt.
+# Project Overview:
 This project demonstrates how to:
 * Create a Docker volume
 * Use the volume with an Apache container
@@ -15,13 +11,11 @@ This project demonstrates how to:
 * Verify data persistence using a browser
 
 # Project Directory Structure
-
 docker-volume-demo/ \
 │
 ├── website/ \
 │   └── index.html \
 └── README.md 
-
 # Steps Performed
 # Step 1: Create project folders
 cd %USERPROFILE%\Documents \
@@ -72,8 +66,7 @@ http://localhost:9090
 # cleanup
 Remove containers: \
 docker stop apache2 \
-docker rm apache2
-
+docker rm apache2 \
 Remove volume: \
 docker volume rm web_volume
 
