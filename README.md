@@ -18,13 +18,13 @@ docker-volume-demo/ \
 └── README.md 
 # Steps Performed
 # Step 1: Create project folders
-'''bash
-cd %USERPROFILE%\Documents \
-mkdir docker-volume-demo \ 
-cd docker-volume-demo \
-mkdir website \
+```bash
+cd %USERPROFILE%\Documents 
+mkdir docker-volume-demo 
+cd docker-volume-demo 
+mkdir website 
 cd website 
-'''
+```
 # Step 2: Create a sample website file
 echo Hello from Docker Volume > index.html \
 dir 
