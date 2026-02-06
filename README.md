@@ -33,7 +33,7 @@ cd %USERPROFILE%\Documents \
 mkdir docker-volume-demo \ 
 cd docker-volume-demo \
 mkdir website \
-cd website \
+cd website 
 # Step 2: Create a sample website file
 echo Hello from Docker Volume > index.html \
 dir 
@@ -70,7 +70,7 @@ docker run -d ^ \
 -v web_volume:/usr/local/apache2/htdocs ^ \
 httpd:latest
 Verify:
-docker ps \
+docker ps 
 # Step 9: Final verification (data persistence)
 http://localhost:9090
 
