@@ -32,7 +32,7 @@ dir
 ```
 # Step 3: Create a Docker volume
 ```bash
-docker volume create web_volume \
+docker volume create web_volume 
 ```
 Verify volume: 
 ```bash
