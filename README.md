@@ -1,8 +1,8 @@
-\# Docker Volume Demo (Windows CMD)
+# Docker Volume Demo 
 
 
 
-\## Objective
+## Objective
 
 Demonstrate Docker volume creation, container deletion, and volume reuse
 
@@ -10,27 +10,21 @@ using Windows Command Prompt.
 
 
 
-\## Tools Used
+## Tools Used
 
-\- Windows 10/11
+- Windows 10/11
 
-\- Docker Desktop
+- Docker Desktop
 
-\- Apache (httpd)
+- Apache (httpd)
 
-\- GitHub
+- GitHub
 
-
-
-\## Steps Performed
+# Steps Performed
 
 
 
-\### 1. Create Docker Volume
 
-```cmd
-
-docker volume create web\_volume
 
 
 
