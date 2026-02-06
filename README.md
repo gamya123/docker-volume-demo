@@ -26,51 +26,79 @@ mkdir website
 cd website 
 ```
 # Step 2: Create a sample website file
-echo Hello from Docker Volume > index.html \
-dir 
+```bash
+echo Hello from Docker Volume > index.html 
+dir
+```
 # Step 3: Create a Docker volume
+```bash
 docker volume create web_volume \
+```
 Verify volume: 
-docker volume ls \
+```bash
+docker volume ls 
+```
 Inspect volume:
-docker volume inspect web_volume 
+```bash
+docker volume inspect web_volume
+```
 # Step 4: Copy website data into the volume
-Run this command from docker-volume-demo folder: \
-docker run --rm ^ \
--v web_volume:/usr/local/apache2/htdocs ^ \
--v "%cd%\website":/temp ^ \
-busybox sh -c "cp -r /temp/* /usr/local/apache2/htdocs/" \
+Run this command from docker-volume-demo folder: 
+```bash
+docker run --rm ^ 
+-v web_volume:/usr/local/apache2/htdocs ^ 
+-v "%cd%\website":/temp ^ 
+busybox sh -c "cp -r /temp/* /usr/local/apache2/htdocs/"
+```
 This copies index.html into the Docker volume
 # Step 5: Run Apache container using the volume
-docker run -d ^ \
---name apache1 ^ \
--p 8080:80 ^ \
--v web_volume:/usr/local/apache2/htdocs ^ \
-httpd:latest \
-Verify container: \
+```bash
+docker run -d ^ 
+--name apache1 ^ 
+-p 8080:80 ^ 
+-v web_volume:/usr/local/apache2/htdocs ^ 
+httpd:latest 
+```
+Verify container: 
+```bash
 docker ps
+```
 # Step 6: Verify in browser
-http://localhost:8080 
+```bash
+http://localhost:8080
+```
 # Step 7: Stop and delete the container
-docker stop apache1 \ 
+```bash
+docker stop apache1 
 docker rm apache1
+```
 # Step 8: Reuse the SAME volume in another container
-docker run -d ^ \
---name apache2 ^ \
--p 9090:80 ^ \
--v web_volume:/usr/local/apache2/htdocs ^ \
-httpd:latest \
-Verify: \
-docker ps 
+```bash
+docker run -d ^ 
+--name apache2 ^ 
+-p 9090:80 ^ 
+-v web_volume:/usr/local/apache2/htdocs ^ 
+httpd:latest
+```
+Verify: 
+```bash
+docker ps
+``` 
 # Step 9: Final verification (data persistence)
+```bash
 http://localhost:9090
+```
 
 # cleanup
-Remove containers: \
-docker stop apache2 \
-docker rm apache2 \
-Remove volume: \
+Remove containers: 
+```bash
+ocker stop apache2 
+docker rm apache2
+```
+Remove volume: 
+```bash
 docker volume rm web_volume
+```
 
 
 
