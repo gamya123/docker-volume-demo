@@ -70,11 +70,11 @@ docker ps
 http://localhost:9090
 
 # cleanup
-Remove containers:
+Remove containers: \
 docker stop apache2 \
 docker rm apache2
 
-Remove volume:
+Remove volume: \
 docker volume rm web_volume
 
 
