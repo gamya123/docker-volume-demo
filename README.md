@@ -8,16 +8,11 @@ using Windows Command Prompt.
 # Project Overview
 
 This project demonstrates how to:
-
-Create a Docker volume
-
-Use the volume with an Apache container
-
-Persist website data even after deleting containers
-
-Reuse the same volume in another container
-
-Verify data persistence using a browser
+* Create a Docker volume
+* Use the volume with an Apache container
+* Persist website data even after deleting containers
+* Reuse the same volume in another container
+* Verify data persistence using a browser
 
 # Project Directory Structure
 
