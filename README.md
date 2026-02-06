@@ -63,8 +63,8 @@ docker run -d ^ \
 --name apache2 ^ \
 -p 9090:80 ^ \
 -v web_volume:/usr/local/apache2/htdocs ^ \
-httpd:latest
-Verify:
+httpd:latest \
+Verify: \
 docker ps 
 # Step 9: Final verification (data persistence)
 http://localhost:9090
