@@ -39,7 +39,7 @@ docker volume ls \
 Inspect volume:
 docker volume inspect web_volume 
 # Step 4: Copy website data into the volume
-Run this command from docker-volume-demo folder:
+Run this command from docker-volume-demo folder: \
 docker run --rm ^ \
 -v web_volume:/usr/local/apache2/htdocs ^ \
 -v "%cd%\website":/temp ^ \
