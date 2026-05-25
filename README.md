@@ -45,18 +45,18 @@ docker volume inspect web_volume
 # Step 4: Copy website data into the volume
 Run this command from docker-volume-demo folder: 
 ```bash
-docker run --rm ^ 
--v web_volume:/usr/local/apache2/htdocs ^ 
--v "%cd%\website":/temp ^ 
+docker run --rm 
+-v web_volume:/usr/local/apache2/htdocs  
+-v "%cd%\website":/temp  
 busybox sh -c "cp -r /temp/* /usr/local/apache2/htdocs/"
 ```
 This copies index.html into the Docker volume
 # Step 5: Run Apache container using the volume
 ```bash
-docker run -d ^ 
---name apache1 ^ 
--p 8080:80 ^ 
--v web_volume:/usr/local/apache2/htdocs ^ 
+docker run -d  
+--name apache1  
+-p 8080:80 
+-v web_volume:/usr/local/apache2/htdocs 
 httpd:latest 
 ```
 Verify container: 
@@ -74,10 +74,10 @@ docker rm apache1
 ```
 # Step 8: Reuse the SAME volume in another container
 ```bash
-docker run -d ^ 
---name apache2 ^ 
--p 9090:80 ^ 
--v web_volume:/usr/local/apache2/htdocs ^ 
+docker run -d  
+--name apache2  
+-p 9090:80  
+-v web_volume:/usr/local/apache2/htdocs  
 httpd:latest
 ```
 Verify: 
@@ -92,7 +92,7 @@ http://localhost:9090
 # cleanup
 Remove containers: 
 ```bash
-ocker stop apache2 
+docker stop apache2 
 docker rm apache2
 ```
 Remove volume: 
